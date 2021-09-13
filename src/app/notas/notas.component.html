@@ -22,13 +22,13 @@
     {{disc.disciplina}}
   </td>
   <td>
-  <input type="number" #inputp1 placeholder="{{disc.p1}}" size="2"/>
+  <input type="number" #inputp1 placeholder="{{disc.p1}}" min="0" max="10" />
     <button (click)="this.discl.editarp1(i, inputp1.value)" style="cursor: pointer">
     editar
     </button>
   </td>
   <td>
-  <input type="number" #inputp2 placeholder="{{disc.p2}}" size="2"/>
+  <input type="number" #inputp2 placeholder="{{disc.p2}}" min="0" max="10"/>
     <button (click)="this.discl.editarp2(i, inputp2.value)" style="cursor: pointer">
     editar
     </button>
