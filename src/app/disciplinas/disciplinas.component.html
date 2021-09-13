@@ -1,0 +1,53 @@
+<h2>Disciplinas</h2>
+<div>
+  Disciplinas
+  <input #input type="text"><br>
+  Dia da semana
+  <select #input2 id="cars" name="cars">
+    <option value="Domingo">Domingo</option>
+    <option value="Segunda-Feira">Segunda-Feira</option>
+    <option value="Terça-Feira">Terça-Feira</option>
+    <option value="Quarta-Feira">Quarta-Feira</option>
+    <option value="Quinta-Feira">Quinta-Feira</option>
+    <option value="Sexta-Feira">Sexta-Feira</option>
+    <option value="Sábado">Sábado</option>
+</select><br>
+  Hora do começo da aula
+  <input #input3 type="time"><br>
+  Hora do final da aula
+  <input #input4 type="time"><br>
+
+  <button (click)="this.discl.add(input.value, input2.value, input3.value, input4.value, 0, 0); input.value='';">Cadastrar</button>
+</div>
+<table border="1">
+
+  <tr>
+    <td>
+      Disciplinas
+    </td>
+    <td>
+      Dia da semana
+    </td>
+    <td>
+      Horário
+    </td>
+
+  </tr>
+  <tr *ngFor="let disc of this.discl.getList(), index as i">
+    <td>
+      {{disc.disciplina}}
+    </td>
+    <td>
+      {{disc.dia}}
+    </td>
+    <td>
+      {{disc.horac}} - {{disc.horaf}}
+      <button (click)="this.discl.remove(i)" style="cursor: pointer">
+x
+</button>
+    </td>
+    
+
+  </tr>
+
+</table>

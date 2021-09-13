@@ -1,0 +1,39 @@
+<h2>Notas</h2>
+<div>
+
+
+</div>
+<table border="1">
+
+<tr>
+  <td>
+    Disciplinas
+  </td>
+  <td>
+    Nota P1
+  </td>
+  <td>
+  Nota P2
+  </td>
+
+</tr>
+<tr *ngFor="let disc of this.discl.getList(), index as i">
+  <td>
+    {{disc.disciplina}}
+  </td>
+  <td>
+  <input type="number" #inputp1 placeholder="{{disc.p1}}" size="2"/>
+    <button (click)="this.discl.editarp1(i, inputp1.value)" style="cursor: pointer">
+    editar
+    </button>
+  </td>
+  <td>
+  <input type="number" #inputp2 placeholder="{{disc.p2}}" size="2"/>
+    <button (click)="this.discl.editarp2(i, inputp2.value)" style="cursor: pointer">
+    editar
+    </button>
+  </td>
+
+</tr>
+
+</table>
